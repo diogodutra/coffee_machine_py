@@ -1,3 +1,10 @@
+#Coffee Machine example with Factory Design Pattern
+
+class CoffeeMachine(object): 
+	def make(self, coffee_name):
+		if coffee_name == 'Espresso': return Espresso()
+		if coffee_name == 'Latte':    return Latte()
+		assert 0, "Bad shape creation: " + type
 
 		
 class Coffee(object):
@@ -6,13 +13,6 @@ class Coffee(object):
 		
 	def prepare():
 		print('Heat water')
-
-
-class CoffeeMachine(object): 
-	def make_coffee(self, coffee_name):
-		if coffee_name == 'Espresso': return Espresso()
-		if coffee_name == 'Latte':    return Latte()
-		assert 0, "Bad shape creation: " + type
 
 
 class Espresso(Coffee):
@@ -41,6 +41,6 @@ class Latte(Coffee):
 		
 		
 coffeeMachine = CoffeeMachine()
-coffee1 = coffeeMachine.make_coffee('Espresso')
+coffee1 = coffeeMachine.make('Espresso')
 print()
-coffee2 = coffeeMachine.make_coffee('Latte')
+coffee2 = coffeeMachine.make('Latte')
